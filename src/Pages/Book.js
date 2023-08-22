@@ -101,11 +101,11 @@ function Book(db) {
                 </div>
                 {book=='Informacion'&&
                     <div>
-                        <h2 style={{fontSize:'2vw'}}>Autor: {db.db[0].Autor}</h2>
-                        <h3 style={{fontSize:'1.3vw'}}>Categoria: {db.nameCat}</h3>
+                        <h2 style={{fontSize:'100%'}}>Autor: {db.db[0].Autor}</h2>
+                        <h3 style={{fontSize:'100%'}}>Categoria: {db.nameCat}</h3>
 
                         <div>
-                            <p style={{fontSize:'1.3vw'}}>
+                            <p style={{fontSize:'100%'}}>
                                 {db.db[0].resumen}
                             </p>
                         </div>

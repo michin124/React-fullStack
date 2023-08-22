@@ -89,7 +89,8 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template:67% 30%/ 100%;
+    grid-template:67% 33%/ 100%;
+    border-radius: 10mm;
 }
 .mediaCard{
     height: 100%;
@@ -101,7 +102,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template:10% 50% 70%/ 100%;
+    grid-template:10% 40% 60%/ 100%;
 }
 .TituloBooks{
     text-align: center;

@@ -54,3 +54,14 @@
     grid-template:100%/ 100%;
     
 }
+
+
+.DescCardS{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template:30% 30%/ 100%;
+
+}

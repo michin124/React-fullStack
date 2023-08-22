@@ -162,13 +162,14 @@ function Search(db) {
                                                     className='mediaCard'
                                                     image={`${urlImg}${info.file}`}
                                                     />
-                                                    <CardContent className='DescCard'>
+                                                    <CardContent className='DescCardS'>
                                                         <Rating
                                                             style={{justifyContent:'center'}}
                                                             value={info.calificacion}
                                                             precision={0.5}
                                                             readOnly
                                                         />
+                                                        <br></br>
                                                         <div className='TituloBooks'>
                                                             {info.nombre}
                                                         </div>
@@ -203,12 +204,12 @@ function Search(db) {
                                     (autor.map((info) => {
                                         return(<>
                                             <SwiperSlide style={{ height: '99%', width: '100%' }} >
-                                                <Card onClick={()=>ButtonAct(`/Book?idBook=${info.id}`)} Button={true} className='Card'>
+                                                <Card onClick={()=>ButtonAct(`/Book?idBook=${info.id}`)} Button={true} className='CardS'>
                                                     <CardMedia
                                                     className='mediaCard'
                                                     image={`${urlImg}${info.file}`}
                                                     />
-                                                    <CardContent className='DescCard'>
+                                                    <CardContent className='DescCardS'>
                                                         <Rating
                                                             style={{justifyContent:'center'}}
                                                             value={info.calificacion}
