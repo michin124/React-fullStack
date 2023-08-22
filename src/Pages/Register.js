@@ -4,14 +4,14 @@ import '../Styles/register.css';
 
 
 function Register(res) {
-    console.log(res)
+
     const [formData, setFormData] = useState({
         Nombre: "",
         Correo: "",
         Password: "",
         PasswordC: "",
-        Pregunta: 1,
-        Respuesta: "",
+        Answer:"",
+        Pregunta: null,
     });
 
     const handleChange = (event) => {
@@ -58,13 +58,13 @@ function Register(res) {
             <input type="email" name="Correo" value={formData.Correo} onChange={handleChange} placeholder="Correo Electrónico" className="input-field" />
             <input type="Password" name="PasswordC" value={formData.PasswordC} onChange={handleChange} placeholder="Contraseña" className="input-field" />
             <input type="Password" name="Password" value={formData.Password} onChange={handleChange} placeholder="Confirmar Contraseña" className="input-field" />
-            <select name="preguntaSeguridad" value={formData.preguntaSeguridad} onChange={handleChange} className="input-field select-field">
+            <select name="Pregunta" value={formData.Pregunta} onChange={handleChange} className="input-field select-field">
                 <option value="">Seleccionar Pregunta de Seguridad</option>
                 <option value={1}>¿Cual es el nombre de tu primera mascota?</option>
                 <option value={2}>¿Como se llama tu ser mas querido?</option>
                 <option value={3}>¿Cual es tu equipo favorito?</option>
             </select>
-            <input type="text" name="Respuesta" value={formData.Respuesta} onChange={handleChange} placeholder="Respuesta de Seguridad" className="input-field" />
+            <input type="text" name="Answer" value={formData.Answer} onChange={handleChange} placeholder="Respuesta de Seguridad" className="input-field" />
             {formData.Password==formData.PasswordC&&
                 <button onClick={handleSubmit} className="register-button">Registrar</button>
             }

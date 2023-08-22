@@ -14,17 +14,18 @@ const initialDb=[
         Nombre: '',
         Correo: '',
         Password: '',
+        Answer: '',
         Pregunta: 1,
-        Respuesta: '',
+        
     }
 ]
 function ApiRegister() {
+    
     const navigate = useNavigate();
     let {search}=useLocation();
     let query=new URLSearchParams(search);
     
     let busqueda=query.get("Search")
-    console.log(busqueda)
     const url='http://127.0.0.1:8000/'
     //Api de registro que consume los servicios necesarios para crear un usuario
     const [db,setDb]=useState(initialDb)//constante que guarda los usuarios
@@ -40,7 +41,6 @@ function ApiRegister() {
             
         });
     }, [setDb]);
-        
     const createData = (data) => {
         const apiUrl = `${url}user/users/${data.Correo}`;
         axios.get(apiUrl).then((response) => {
@@ -50,7 +50,10 @@ function ApiRegister() {
                 //para realizar un post
                 axios.post(urlPost,data);
                 navigate('/login')
-                
+                window.location.reload();
+            }
+            else{
+                alert('Error, trata de nuevo')
             }
         })
     }

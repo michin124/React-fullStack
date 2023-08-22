@@ -43,19 +43,29 @@ function ApiLogin() {
     }, [setDb]);
     
     const comprobar = (data) => {
+        
         //para verificar
-        const apiUrl = `${url}user/ini/${data.correo}/${data.contrasena}`;
-        axios.get(apiUrl).then((response) => {
+        const apiUrl = `${url}user/login/uno/`;
+        console.log(apiUrl)
+        console.log(data)
+        axios.post(apiUrl, data )
+        
+        .then(response => {
+            console.log(response)
             if(response.data.message=='succes')
             {
                 console.log(response.data.Opiniones)
                 localStorage.setItem("UserId",response.data.Opiniones[0].id);
+                localStorage.setItem("UserName",response.data.Opiniones[0].Nombre);
                 navigate('/')
-                
-            }
-            
+            } 
+            if(response.data.message!='succes')
+            {
+                alert('Correo o contraseña incorrectos')
+            }    
             
         });
+        
     };
 
     return(

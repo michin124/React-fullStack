@@ -117,7 +117,7 @@ function Search(db) {
                                         (categoria.map((info) => {
                                             return(<>
                                                 <SwiperSlide style={{ height: '99%', width: '100%' }} >
-                                                    <Card onClick={()=>ButtonAct(`/Book?idBook=${info.id}`)} Button={true} className='Card'>
+                                                    <Card onClick={()=>ButtonAct(`/Cate?categoria=${info.id}`+`&name=${info.tipocategoria}`)} Button={true} className='Card'>
                                                         
                                                         <CardContent className='DescCard'>
                                                             

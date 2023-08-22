@@ -38,14 +38,14 @@ function Login(res) {
         
         <div className="login-container">
             <div className="login-box">
-            <h2 className="login-heading">Iniciar Sesión</h2>
-            <form className="login-form">
-                <input name="correo" value={formData.correo} onChange={handleChange} type="text" placeholder="Correo Electrónico" className="input-field" />
-                <input name="contrasena" value={formData.contrasena} onChange={handleChange} type="password" placeholder="Contraseña" className="input-field" />
-                <button onClick={handleSubmit} className="login-button">Ingresar</button>
-            </form>
-            <p className="login-text">¿Olvidaste tu contraseña? <Link to="/reset-password">Restablecer</Link></p>
-            <p className="login-text">¿No tienes una cuenta? <Link to="/register">Registrarse</Link></p>
+                <h2 className="login-heading">Iniciar Sesión</h2>
+                <form className="login-form">
+                    <input name="correo" value={formData.correo} onChange={handleChange} type="text" placeholder="Correo Electrónico" className="input-field" />
+                    <input name="contrasena" value={formData.contrasena} onChange={handleChange} type="password" placeholder="Contraseña" className="input-field" />
+                    <button onClick={handleSubmit} className="login-button">Ingresar</button>
+                </form>
+                <p className="login-text">¿Olvidaste tu contraseña? <Link to="/reset-password">Restablecer</Link></p>
+                <p className="login-text">¿No tienes una cuenta? <Link to="/register">Registrarse</Link></p>
             </div>
         </div>
     );

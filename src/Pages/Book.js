@@ -20,17 +20,45 @@ import { Rating } from '@mui/material';
 import '../Styles/styleBook.css';
 
 function Book(db) {
-    console.log(db)
+    const currentDate = new Date();
+    const [idLibro, setIdLibro] = useState(0);
+
+    const [formData, setFormData] = useState({
+        nombreU: localStorage.getItem("UserName"),
+        calificacion: null,
+        descripcion: "",
+        idU: localStorage.getItem("UserId"),
+        idL: idLibro,
+        date: currentDate.toLocaleDateString(),
+    });
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
+
+    const handleSubmit = (event) => {
+        
+        formData.idL=db.db[0].id;
+        console.log(formData);
+        if(formData.calificacion==null)
+        {
+            alert('Ingresa una calificacion')
+            return
+        }
+        db.createData(formData)
+        setOpen(false)
+    };
     const navigate = useNavigate();
     const urlImg="http://127.0.0.1:8000/media/" 
-
     const [open, setOpen] = React.useState(false);
     const [book, setBook] = useState('Informacion');
     const [opi, setOpi] = useState([]);
 
     useEffect(() => {
+        setIdLibro(db.db[0].id)
         if (db && db.dbOpi) {
             setOpi(db.dbOpi);
+            
         }
     }, [db]);
     function ButtonAct(ruta){
@@ -128,13 +156,13 @@ function Book(db) {
                                                     <Typography gutterBottom variant="h5" component="div">
                                                         {info.nombreUser}
                                                     </Typography>
-                                                    <div className='Descp'>
+                                                    <div className='DescpO'>
                                                         
                                                         {info.descripcion}
                                                         
                                                     </div>
                                                     <div className='data'>
-                                                        <h3>{info.date}</h3>
+                                                        <h3>Publicado el: {info.date}</h3>
                                                     </div>
                                                     
 
@@ -176,16 +204,20 @@ function Book(db) {
                     </h1>
                     <Rating
                         style={{justifyContent:'left'}}
-                        value={5}
-                        precision={0.5}
-                        
+                        value={formData.calificacion}
+                        precision={1}
                         size="large"
+                        onChange={handleChange}
+                        name="calificacion"
                     />
                     <br></br>
                     <Textarea 
                         minRows={2}
                         maxRows={4} 
-                        placeholder="Type anything…" 
+                        placeholder="Cuentanos..." 
+                        value={formData.descripcion}
+                        onChange={handleChange}
+                        name="descripcion"
                     />
                     <br></br>
 
@@ -200,7 +232,7 @@ function Book(db) {
                     >
                         
                         <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button onClick={() => setOpen(false)}  style={{backgroundColor:'purple',height:'50%',width:'50%'}} variant="contained">Opinar</Button>
+                            <Button onClick={handleSubmit}  style={{backgroundColor:'purple',height:'50%',width:'50%'}} variant="contained">Opinar</Button>
                             <Button onClick={() => setOpen(false)} style={{color:'black',backgroundColor:'white',height:'50%',width:'50%'}}  variant="outlined">Cancelar</Button>
                             
                         </ButtonGroup>

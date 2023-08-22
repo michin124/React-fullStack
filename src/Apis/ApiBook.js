@@ -63,22 +63,18 @@ function ApiBook() {
         });
 
     }, [setDb]);
-    
+
     const createData = (data) => {
-        
-        if(response.data.message!='succes')
-        {
-            const urlPost = `${url}user/user/`;
-            //para realizar un post
-            axios.post(urlPost,data);
-            navigate('/login')
-        }
-        
+        const urlPost = `${url}opiniones/opiniones/`;
+        //para realizar un post
+        axios.post(urlPost,data);
+
+        window.location.reload()
     }
 
 
     return(
-        <Book db={db} dbOpi={dbOpi} nameCat={nameCat}></Book>
+        <Book db={db} dbOpi={dbOpi} nameCat={nameCat} createData={createData}></Book>
     );
 }
 

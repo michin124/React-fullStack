@@ -57,7 +57,12 @@
     height: 80%;
     width: 100%;
     display: grid;
-    grid-template:15% 25% 60% 20%/ 100%;
+    grid-template:15% 20% 70% 20%/ 100%;
+}
+.DescpO{
+    height: 50%;
+    overflow: hidden;
+    overflow-y:scroll;
 }
 .data{
     width: 100%;
