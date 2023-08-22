@@ -3,19 +3,28 @@ import './App.css';
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './components/Home';
-import Register from './components/Register';
-import Login from './components/Login';
+import Home from './Pages/Home';
+import Register from './Pages/Register';
+import Login from './Pages/Login';
+import Book from './Pages/Book';
+import ApInicio from './Apis/ApInicio';
+import ApiBook from './Apis/ApiBook';
+import ApiSeacrh from './Apis/ApiSearch';
+import ApiRegister from './Apis/ApiRegister';
+import ApiLogin from './Apis/ApiLogin';
+import ApiProfile from './Apis/ApiProfile';
 
 function App() {
   return (
     <Router>
         <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/Register" element={<Register/>}/>
-          <Route exact path="/Login" element={<Login/>}/>
-          <Route exact path="/Book" element={<Home/>}/>
-
+          <Route exact path="/" element={<ApInicio/>}/>
+          <Route exact path="/User" element={<ApiProfile/>}/>
+          <Route exact path="/Register" element={<ApiRegister/>}/>
+          <Route exact path="/Login" element={<ApiLogin/>}/>
+          <Route exact path="/Book" element={<ApiBook/>}/>
+          <Route exact path="/Search/" element={<ApiSeacrh/>}/>
+          
         </Routes>
       
     </Router>
