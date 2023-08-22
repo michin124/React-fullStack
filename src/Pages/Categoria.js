@@ -74,6 +74,11 @@ function Categoria(db) {
         //Esta funcion sirve para pasar de una pagina a otra
         navigate(ruta)
     }
+    function searchC(ruta){
+        //Esta funcion sirve para cambiar la categoria de los libros
+        navigate(`/Search?Search=${ruta}`)
+
+    }
 
     const animatedComponents = makeAnimated();
 
@@ -88,7 +93,7 @@ function Categoria(db) {
                             placeholder={'Buscar:'}
                             value={busqueda} onChange={handleSearchChange}
                         />
-                        <Button onClick={()=>searchC(searchValue)} style={{backgroundColor:'purple',height:'250%',width:'100%'}} variant="contained">Buscar</Button>
+                        <Button onClick={()=>ButtonAct(`/Search?Search=${searchValue}`)} style={{backgroundColor:'purple',height:'250%',width:'100%'}} variant="contained">Buscar</Button>
                     </div>
                 </div>
                 <Button onClick={()=>ButtonAct("/")}  style={{backgroundColor:'white',height:'50%',width:'50%',fontSize:'15px',color:'purple'}} variant="outlined"> Inicio</Button>
