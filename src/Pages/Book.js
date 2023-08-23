@@ -142,7 +142,7 @@ function Book(db) {
                                                 <CardContent className='DescCardOpi'>
                                                     <div className='date'>
                                                         <Rating
-                                                            style={{justifyContent:'center',fontSize:'3vw'}}
+                                                            style={{justifyContent:'center',fontSize:'2vw'}}
                                                             value={info.calificacion}
                                                             precision={0.5}
                                                             readOnly

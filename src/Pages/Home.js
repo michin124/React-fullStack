@@ -166,7 +166,7 @@ function Home(db) {
                                             />
                                             <CardContent className='DescCard'>
                                                 <Rating
-                                                    style={{justifyContent:'center', fontSize:'2.4vw'}}
+                                                    style={{justifyContent:'center', fontSize:'1.7vw'}}
                                                     value={info.calificacion}
                                                     precision={0.5}
                                                     readOnly

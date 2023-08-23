@@ -38,7 +38,6 @@ function ApiReset() {
         axios.get(apiUrl).then((response) => {
             console.log(response)
             setId(response.data.Opiniones[0].id)
-            console.log(apiUrl)
             if(response.data.message=='succes')
             {
                 const apiUrl = `${url}user/pregunta/${response.data.Opiniones[0].IdRespuesta_id}`;
@@ -52,7 +51,6 @@ function ApiReset() {
             }
         }); 
     }
-console.log(id)
     const reset = (data) => {
         //para verificar
         const apiUrl = `${url}user/confirm/${id}/`;
