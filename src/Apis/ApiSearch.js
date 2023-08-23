@@ -56,30 +56,37 @@ function ApiSeacrh() {
     const searchChange = (data) => {
         
         const apiUrl = `${url}libro/libroU/${data}`;
-
+        
         axios.get(apiUrl).then((response) => {
             //los vuelve a consumir si el buscador se vuelve a utilizar, para realizar una busqueda mas rapida
-            setDb(response.data.libros);
-            setDbN(response.data.autores.libros)
-            setDbC(response.data.categorias.categorias)
+            console.log(response.data.libros.message)
             if(response.data.libros.message=='libros no encontradas')
             {
-                
+                console.log('hola')
                 setDb([]);
+            }
+            else{
+                setDb(response.data.libros);
             }
             if(response.data.autores.message=='libros no encontradas')
             {
                 setDbN([]);
             }
+            else{
+                setDbN(response.data.autores.libros)
+            }
             if(response.data.categorias.message=='libros no encontradas')
             {
                 setDbC([]);
+            }
+            else{
+                setDbC(response.data.categorias.categorias)
             }
         });
         
         
     }
-        
+        console.log(db)
     return(
         <Search db={db} dbN={dbN} dbC={dbC} searchChange={searchChange}></Search>
     );

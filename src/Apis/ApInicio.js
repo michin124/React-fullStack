@@ -68,6 +68,7 @@ function ApInicio() {
         {
             
             const apiUrl = `${url}user/user/${localStorage.getItem("UserId")}`;
+            console.log(apiUrl)
             axios.get(apiUrl).then((response) => {
                 setDbU(response.data.Opiniones[0])
             });

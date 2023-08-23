@@ -72,8 +72,9 @@ function Search(db) {
     function searchC(ruta){
         //Esta funcion sirve para cambiar la categoria de los libros
         navigate(`/Search?Search=${ruta}`)
+        
         db.searchChange(ruta)
-
+        window.location.reload()
     }
 
     const animatedComponents = makeAnimated();
