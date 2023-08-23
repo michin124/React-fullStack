@@ -62,7 +62,7 @@ function ApiSeacrh() {
             console.log(response.data.libros.message)
             if(response.data.libros.message=='libros no encontradas')
             {
-                console.log('hola')
+            
                 setDb([]);
             }
             else{

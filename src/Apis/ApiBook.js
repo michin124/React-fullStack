@@ -41,9 +41,11 @@ function ApiBook() {
     useEffect(() => {
         setAppState({ loading: true });
         const apiUrl = `${url}libro/libro/${query.get("idBook")}`;
+        console.log(apiUrl)
         axios.get(apiUrl).then((response) => {
             const allRepos = response.data.book;
-            setNameCat(response.data.categoria)
+            console.log(response.data.categoria[0].tipocategoria)
+            setNameCat(response.data.categoria[0].tipocategoria)
             setDb(allRepos);
             setAppState({ loading: false, repos: allRepos });
         });

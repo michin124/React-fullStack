@@ -32,6 +32,7 @@ import { Autoplay, Pagination, Navigation,EffectCoverflow } from 'swiper/modules
 
 
 function Categoria(db) {
+    console.log('asdasd')
     let {search}=useLocation();
     let query=new URLSearchParams(search);
     
@@ -51,10 +52,11 @@ function Categoria(db) {
     const handleSearchChange = (value) => {
         setSearchValue(value);
     };
-
+console.log('asdas')
     useEffect(() => {
 
         const apiUrl = `${url}libro/libroCat/${busqueda}`;
+        console.log(apiUrl)
         axios.get(apiUrl).then((response) => {
             console.log(response)
             const allRepos = response.data.book;
