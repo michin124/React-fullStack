@@ -24,7 +24,6 @@ function ApiRegister() {
     const navigate = useNavigate();
     let {search}=useLocation();
     let query=new URLSearchParams(search);
-    
     let busqueda=query.get("Search")
     const url='https://34.95.245.78:8000/'
     //Api de registro que consume los servicios necesarios para crear un usuario
@@ -43,19 +42,36 @@ function ApiRegister() {
     }, [setDb]);
     const createData = (data) => {
         const apiUrl = `${url}user/users/${data.Correo}`;
+        console.log(apiUrl,'asdas')
         axios.get(apiUrl).then((response) => {
+            
             if(response.data.message!='succes')
             {
-                const urlPost = `${url}user/user/`;
-                //para realizar un post
-                axios.post(urlPost,data);
-                navigate('/login')
-                window.location.reload();
+                console.log(apiUrl)
+                const urlPost = `${url}user/user/pot/`;
+                axios.post(urlPost,data).then(response => {
+                    if(response.data.message=='succes'){
+                        console.log(response)
+                        navigate('/login')
+                        window.location.reload()
+                        
+                        
+                        
+                    }
+                    if(response.data.message!='succes'){
+                        alert('Error, trata de nuevo')
+                        
+                    }
+                });     
+                
             }
             else{
                 alert('Error, trata de nuevo')
+                return
             }
+            
         })
+        
     }
     return(
         <Register db={db} createData={createData}></Register>

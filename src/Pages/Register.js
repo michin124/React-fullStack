@@ -20,6 +20,7 @@ function Register(res) {
     };
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         console.log(formData);
         if(formData.Nombre=='')
         {
@@ -46,6 +47,7 @@ function Register(res) {
             alert('Ingresa una respuesta a la pregunta')
             return
         }
+        
         res.createData(formData)
     };
 
