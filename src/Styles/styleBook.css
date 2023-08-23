@@ -38,6 +38,9 @@
 }
 .titleBook{
     font-size: 300%;
+    height: 60%;
+    overflow: hidden;
+    overflow-y:scroll;
 }
 .opinionesRow{
     height: 99%;
