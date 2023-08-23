@@ -33,7 +33,7 @@ function ApiProfile() {
     
     let busqueda=query.get("Search")
 
-    const url='http://34.95.245.78:8000/'
+    const url='https://34.95.245.78:8000/'
     //Api de buscador que consume los servicios necesarios para mostrar el usuario
     const [db,setDb]=useState(initialDb)//constante que guarda el usuario
     const [appState, setAppState] = useState({

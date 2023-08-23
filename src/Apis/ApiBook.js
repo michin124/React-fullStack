@@ -28,7 +28,7 @@ const initialDbO=[
     }
 ]
 function ApiBook() {
-    const url='http://34.95.245.78:8000/'
+    const url='https://34.95.245.78:8000/'
     let {search}=useLocation();
     let query=new URLSearchParams(search);
     const [db,setDb]=useState(initialDb)//constante que guarda los libros

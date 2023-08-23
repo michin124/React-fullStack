@@ -34,7 +34,7 @@ import { Autoplay, Pagination, Navigation,EffectCoverflow } from 'swiper/modules
 function Home(db) {
 
     const [searchValue, setSearchValue] = useState('');
-    const urlImg="http://34.95.245.78:8000/media/" 
+    const urlImg="https://34.95.245.78:8000/media/" 
     const navigate = useNavigate();
     
     const [categoria, setCategoria] = useState([]);

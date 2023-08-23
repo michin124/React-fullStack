@@ -27,7 +27,7 @@ function ApiLogin() {
     let query=new URLSearchParams(search);
     let busqueda=query.get("Search")
 
-    const url='http://34.95.245.78:8000/'
+    const url='https://34.95.245.78:8000/'
     //Api de registro que consume los servicios necesarios para crear un usuario
     const [db,setDb]=useState(initialDb)//constante que guarda los usuarios
     const [appState, setAppState] = useState({
@@ -46,10 +46,7 @@ function ApiLogin() {
         
         //para verificar
         const apiUrl = `${url}user/login/uno/`;
-        console.log(apiUrl)
-        console.log(data)
         axios.post(apiUrl, data )
-        
         .then(response => {
             console.log(response)
             if(response.data.message=='succes')

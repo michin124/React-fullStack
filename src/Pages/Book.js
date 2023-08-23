@@ -49,7 +49,7 @@ function Book(db) {
         setOpen(false)
     };
     const navigate = useNavigate();
-    const urlImg="http://34.95.245.78:8000/media/" 
+    const urlImg="https://34.95.245.78:8000/media/" 
     const [open, setOpen] = React.useState(false);
     const [book, setBook] = useState('Informacion');
     const [opi, setOpi] = useState([]);

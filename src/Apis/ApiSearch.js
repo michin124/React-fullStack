@@ -32,7 +32,7 @@ function ApiSeacrh() {
     
     let busqueda=query.get("Search")
 
-    const url='http://34.95.245.78:8000/'
+    const url='https://34.95.245.78:8000/'
     //Api de buscador que consume los servicios necesarios para buscar
     const [db,setDb]=useState(initialDb)//constante que guarda los libros por nombre
     const [dbN,setDbN]=useState(initialDb)//constante que guarda los libros por autor

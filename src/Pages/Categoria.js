@@ -40,8 +40,8 @@ function Categoria(db) {
 
     
     const [searchValue, setSearchValue] = useState(busqueda);
-    const url='http://34.95.245.78:8000/'
-    const urlImg="http://34.95.245.78:8000/media/" 
+    const url='https://34.95.245.78:8000/'
+    const urlImg="https://34.95.245.78:8000/media/" 
     const navigate = useNavigate();
     
     const [categoria, setCategoria] = useState([]);
