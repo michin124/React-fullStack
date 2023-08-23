@@ -37,6 +37,12 @@ function ApiReset() {
         
         axios.get(apiUrl).then((response) => {
             console.log(response)
+            if(response.data.message=='producto no encontradas')
+            {
+                alert('Usuario no encontrado')
+                window.location.reload()
+                return
+            }
             setId(response.data.Opiniones[0].id)
             if(response.data.message=='succes')
             {

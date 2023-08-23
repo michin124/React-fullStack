@@ -51,7 +51,13 @@ function ApiLogin() {
             console.log(response)
             if(response.data.message=='succes')
             {
-                console.log(response.data.Opiniones)
+                console.log(response.data.Opiniones[0])
+                if(response.data.Opiniones[0]==undefined)
+                {
+                    alert('Correo o contraseña incorrectos')
+                    window.location.reload()
+                    return
+                } 
                 localStorage.setItem("UserId",response.data.Opiniones[0].id);
                 localStorage.setItem("UserName",response.data.Opiniones[0].Nombre);
                 navigate('/')
