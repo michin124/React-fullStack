@@ -7,7 +7,7 @@
     width: 100%;
     
     display: grid;
-    grid-template:10% 80%/ 100%;
+    grid-template:10% 90%/ 100%;
 
 }
 
@@ -36,12 +36,17 @@
     border-bottom-left-radius: 2mm;
     border-bottom-right-radius: 2mm;
 }
+
 .BodyC{
     margin-top: -2%;
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template:16% 42.5% 42.5%/ 100%;
+    grid-template:10% 70%/ 100%;
+}
+.SwiperCat{
+    height: 100%;
+    width: 100%;
 }
 .BookS{
     padding-top: 2%;
@@ -51,6 +56,11 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template:100%/ 100%;
+    grid-template:30% 70%/ 100%;
     
+}
+.CardSmall
+{
+    height: 100%;
+    border: 1px ridge #65245cef;
 }

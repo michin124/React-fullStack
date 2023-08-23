@@ -67,7 +67,7 @@ function Book(db) {
     }
     return(
         <div className='BodyBook'>
-            <div style={{height:'90%',width:'100%'}} >
+            <div style={{height:'80%',width:'100%'}} >
                 <img className='imgBook' src={`${urlImg}${db.db[0].file}`}/>
             </div>
             <div className='infoBook'>
@@ -80,13 +80,7 @@ function Book(db) {
                         readOnly
                         size="large"
                     />
-                    
-                    
-
                 </div>
-                
-                
-
                 <div>
                     <SegmentedControl
                         name="oneDisabled"
@@ -96,16 +90,16 @@ function Book(db) {
                             { label: "Opiniones", value: "Opiniones" }
                         ]}
                         setValue={newValue =>setBook(newValue) }
-                        style={{ width: '100%',height:'90%', color: '#ab47bc' }} // purple400
+                        style={{ width: '90%',height:'90%', color: '#ab47bc',fontSize:'60%' }} // purple400
                     />
                 </div>
                 {book=='Informacion'&&
-                    <div>
-                        <h2 style={{fontSize:'2vw'}}>Autor: {db.db[0].Autor}</h2>
-                        <h3 style={{fontSize:'1.3vw'}}>Categoria: {db.nameCat}</h3>
+                    <div className='bodyInfo'>
+                        <h2 style={{fontSize:'100%'}}>Autor: {db.db[0].Autor}</h2>
+                        <h3 style={{fontSize:'90%'}}>Categoria: {db.nameCat}</h3>
 
                         <div>
-                            <p style={{fontSize:'1.3vw'}}>
+                            <p style={{fontSize:'100%'}}>
                                 {db.db[0].resumen}
                             </p>
                         </div>
@@ -113,11 +107,11 @@ function Book(db) {
                     </div>
                 }
                 {book=='Opiniones'&&
-                    <div>
+                    <div className='bodyOpi'>
                         <div className='titleOpi'>
                             {localStorage.getItem("UserId")>0&&
                                 <div className='Opinar'>
-                                    <h4>¿Ya lo leiste?, dejanos saber tu opinion</h4>
+                                    <h4 style={{fontSize:'80%'}}>¿Ya lo leiste?, dejanos saber tu opinion</h4>
                                     
                                     <Button variant="outlined" onClick={() => setOpen(true)}  style={{backgroundColor:'purple',height:'40%',width:'40%',color:'white'}} >Opinar</Button>
                                     
@@ -126,19 +120,19 @@ function Book(db) {
                             }
                             {localStorage.getItem("UserId")==0&&
                                 <div className='Opinar'>
-                                    <h4>¿Ya lo leiste?, ingresa y dejanos saber tu opinion</h4>
+                                    <h4 style={{fontSize:'80%'}}>¿Ya lo leiste?, ingresa y dejanos saber tu opinion</h4>
                                     
                                     <Button variant="outlined" onClick={() => ButtonAct('/login')}  style={{backgroundColor:'purple',height:'40%',width:'40%',color:'white'}} >Entrar</Button>
                                     
                                     
                                 </div>
                             }
-                            <h2 style={{fontSize:'2vw'}}>Opiniones</h2>
+                            <h2 style={{fontSize:'100%'}}>Opiniones</h2>
                             
                         </div>
-                        <div className='opinionesRow' style={{height:'100%'}}>
+                        <div className='opinionesRow' >
 
-                            <div style={{height:'100%'}}>
+
                                 {opi&&
                                     opi.map((info) => {
                                         console.log(info)
@@ -146,12 +140,15 @@ function Book(db) {
                                             <Card Button={true} className='CardOpi'>
                                                 
                                                 <CardContent className='DescCardOpi'>
-                                                    <Rating
-                                                        style={{justifyContent:'center'}}
-                                                        value={info.calificacion}
-                                                        precision={0.5}
-                                                        readOnly
-                                                    />
+                                                    <div className='date'>
+                                                        <Rating
+                                                            style={{justifyContent:'center',fontSize:'3vw'}}
+                                                            value={info.calificacion}
+                                                            precision={0.5}
+                                                            readOnly
+                                                        />
+                                                        <h3>{info.date}</h3>
+                                                    </div>
                                                     
                                                     <Typography gutterBottom variant="h5" component="div">
                                                         {info.nombreUser}
@@ -161,9 +158,7 @@ function Book(db) {
                                                         {info.descripcion}
                                                         
                                                     </div>
-                                                    <div className='data'>
-                                                        <h3>Publicado el: {info.date}</h3>
-                                                    </div>
+                                                    
                                                     
 
                                                 </CardContent>
@@ -177,7 +172,7 @@ function Book(db) {
 
                                 
 
-                            </div>
+                            
                             
                             
                         </div>

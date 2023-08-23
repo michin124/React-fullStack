@@ -120,15 +120,15 @@ function Home(db) {
                 </div>
                 {logOn==false&&
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                        <Button onClick={()=>ButtonAct("/Register")} style={{backgroundColor:'purple',height:'50%',width:'50%'}} variant="contained">Register</Button>
-                        <Button onClick={()=>ButtonAct("/login")} style={{backgroundColor:'white',height:'50%',width:'50%',color:'purple'}}  variant="outlined">Login</Button>
+                        <Button onClick={()=>ButtonAct("/Register")} style={{backgroundColor:'purple',height:'50%',width:'50%',fontSize:'70%'}} variant="contained">Registrarse</Button>
+                        <Button onClick={()=>ButtonAct("/login")} style={{backgroundColor:'white',height:'50%',width:'50%',color:'purple',fontSize:'70%'}}  variant="outlined">Ingresar</Button>
                     </ButtonGroup>
 
                 }
                 {logOn==true&&
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                        <Button onClick={()=>ButtonAct("/User")} style={{backgroundColor:'purple',height:'100%',width:'50%'}} variant="contained">{user.Nombre}</Button>
-                        <Button onClick={closeS} style={{backgroundColor:'white',height:'100%',width:'100%',fontSize:'10px',color:'purple'}} variant="outlined">Cerrar sesion</Button>
+                        <Button onClick={()=>ButtonAct("/User")} style={{backgroundColor:'purple',height:'100%',width:'50%',fontSize:'70%'}} variant="contained">{user.Nombre}</Button>
+                        <Button onClick={closeS} style={{backgroundColor:'white',height:'100%',width:'100%',fontSize:'10px',color:'purple',fontSize:'70%'}} variant="outlined">Cerrar sesion</Button>
                     </ButtonGroup>
                 }
                 
@@ -149,7 +149,7 @@ function Home(db) {
                             disableOnInteraction: false,
                         }}
                         
-                        slidesPerView={4}
+                        slidesPerView={3}
                         spaceBetween={30}
                         pagination={true}
                         modules={[ Pagination,Autoplay]}
@@ -166,7 +166,7 @@ function Home(db) {
                                             />
                                             <CardContent className='DescCard'>
                                                 <Rating
-                                                    style={{justifyContent:'center'}}
+                                                    style={{justifyContent:'center', fontSize:'2.4vw'}}
                                                     value={info.calificacion}
                                                     precision={0.5}
                                                     readOnly

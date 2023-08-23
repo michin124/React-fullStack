@@ -86,6 +86,7 @@ function Search(db) {
                 <div className='UpS'>
                     <div className='SearchB'>
                         <ReactSearchBox
+                            
                             placeholder={'Ultima busqueda: '+busqueda}
                             value={busqueda} onChange={handleSearchChange}
                         />
@@ -94,47 +95,40 @@ function Search(db) {
                 </div>
                 <Button onClick={()=>ButtonAct("/")}  style={{backgroundColor:'white',height:'50%',width:'50%',fontSize:'15px',color:'purple'}} variant="outlined"> Inicio</Button>
             </div>
-            <div className='BodyC'>
-                <div>
+            <div >
+                
                     {categoria.length>0&&
                         categoria[0].id!=null&&
-                            <div className='BookS'>
+                            <div style={{height:'10%',marginBottom:'5%'}}>
                                 <h2>Categorias que tienen en el nombre "{busqueda}":</h2>
-                                <br></br>
                                 <Swiper
                                     autoplay={{
                                         delay: 2500,
                                         disableOnInteraction: false,
                                     }}
                                     
-                                    slidesPerView={4}
+                                    slidesPerView={2}
                                     spaceBetween={30}
                                     pagination={true}
                                     modules={[ Pagination,Autoplay]}
-                                    className="SwiperB"
+                                    className="SwiperCat"
                                 >
                                     {categoria[0].id!=null&&
                                         (categoria.map((info) => {
                                             return(<>
-                                                <SwiperSlide style={{ height: '99%', width: '100%' }} >
-                                                    <Card onClick={()=>ButtonAct(`/Cate?categoria=${info.id}`+`&name=${info.tipocategoria}`)} Button={true} className='Card'>
-                                                        
-                                                        <CardContent className='DescCard'>
-                                                            
+                                                <SwiperSlide style={{ height: '100%', width: '100%' }} >
+                                                    <Card onClick={()=>ButtonAct(`/Cate?categoria=${info.id}`+`&name=${info.tipocategoria}`)} Button={true} className='CardSmall'>
                                                             <div className='TituloBooks'>
                                                                 {info.tipocategoria}
                                                             </div>
-                                                            
-                                                        </CardContent>
                                                     </Card>
                                                 </SwiperSlide>
                                             </>)
                                         }))
                                     }
                                 </Swiper>
-                        </div>
+                            </div>
                     } 
-                </div>                
                 {books.length>0&&
                     books[0].id!=null&&
                         <div className='Books'>
@@ -147,7 +141,7 @@ function Search(db) {
                                     disableOnInteraction: false,
                                 }}
                                 
-                                slidesPerView={4}
+                                slidesPerView={3}
                                 spaceBetween={30}
                                 pagination={true}
                                 modules={[ Pagination,Autoplay]}
@@ -193,7 +187,7 @@ function Search(db) {
                                     disableOnInteraction: false,
                                 }}
                                 
-                                slidesPerView={4}
+                                slidesPerView={3}
                                 spaceBetween={30}
                                 pagination={true}
                                 modules={[ Pagination,Autoplay]}
