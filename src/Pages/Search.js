@@ -39,7 +39,7 @@ function Search(db) {
     
     const [searchValue, setSearchValue] = useState(busqueda);
     console.log(db)
-    const urlImg="http://127.0.0.1:8000/media/" 
+    const urlImg="http://34.95.245.78:8000/media/" 
     const navigate = useNavigate();
     
     const [categoria, setCategoria] = useState([]);

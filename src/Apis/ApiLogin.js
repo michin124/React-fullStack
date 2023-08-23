@@ -27,7 +27,7 @@ function ApiLogin() {
     let query=new URLSearchParams(search);
     let busqueda=query.get("Search")
 
-    const url='http://127.0.0.1:8000/'
+    const url='http://34.95.245.78:8000/'
     //Api de registro que consume los servicios necesarios para crear un usuario
     const [db,setDb]=useState(initialDb)//constante que guarda los usuarios
     const [appState, setAppState] = useState({

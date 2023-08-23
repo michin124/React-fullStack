@@ -21,7 +21,7 @@ const initialUser=[
 ]
 function ApiReset() {
 
-    const url='http://127.0.0.1:8000/'
+    const url='http://34.95.245.78:8000/'
     //Api de inicio que consume los servicios necesarios
     const [valid,setValid]=useState(false)//constante que sabe si es valido el correo
     const [db,setDb]=useState(initialDbCat)//constante que guarda la informacion del usuario

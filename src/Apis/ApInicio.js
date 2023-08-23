@@ -34,7 +34,7 @@ const initialUser=[
 ]
 function ApInicio() {
 
-    const url='http://127.0.0.1:8000/'
+    const url='http://34.95.245.78:8000/'
     //Api de inicio que consume los servicios necesarios
     const [db,setDb]=useState(initialDb)//constante que guarda los libros
     const [dbC,setDbC]=useState(initialDbCat)//constante que guarda las categorias
